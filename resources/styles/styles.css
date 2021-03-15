@@ -1,5 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	padding: 1rem;
+}
+
+.header {
+	background-image: linear-gradient(
+			to right bottom,
+			rgba(42, 206, 130, 0.5),
+			rgba(50, 231, 200, 0.7)
+		),
+		url(../img/header_img.jpg);
+	height: 90vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top;
+	position: relative;
+	clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.logo {
+	cursor: pointer;
+	height: 5rem;
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	animation: moveInBottom 1s ease-out;
+}
+
+.text-box {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+.primary-header {
+	color: #fff;
+	text-transform: uppercase;
+}
+.primary-header-main {
+	display: block;
+	font-size: 3.5rem;
+	font-weight: 300;
+	margin-bottom: 1rem;
+	letter-spacing: 35px;
+	animation: moveInLeft 1s ease-out 0.6s;
+	animation-fill-mode: backwards;
+}
+.primary-header-sub {
+	display: block;
+	font-size: 1.5rem;
+	font-weight: 700;
+	letter-spacing: 17px;
+	margin-bottom: 3.5rem;
+	line-height: 150%;
+
+	animation: moveInRight 1s ease-out 0.8s;
+	animation-fill-mode: backwards;
+}
+
+.btn:link,
+.btn:visited {
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 0.5rem 2rem;
+	border-radius: 100px;
+	font-size: 1.5rem;
+	color: #777;
+	font-weight: 400;
+	transition: all 0.2s;
+	display: inline-block;
+	animation: moveInBottom 1s ease-out 1s;
+	animation-fill-mode: backwards;
+	position: relative;
+}
+.btn-white {
+	background-color: #fff;
+}
+.btn:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.btn:active {
+	transform: translateY(-5px);
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+.btn::after {
+	content: "";
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 100px;
+	z-index: -1;
+	transition: all 0.2s;
+}
+.btn-white:hover::after {
+	background-color: #fff;
+}
+.btn:hover::after {
+	transform: scale(1.4);
+	opacity: 0;
+}
+
+@keyframes moveInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-200px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes moveInRight {
+	0% {
+		transform: translateX(200px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+@keyframes moveInBottom {
+	0% {
+		transform: translateY(25px);
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
